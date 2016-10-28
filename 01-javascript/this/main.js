@@ -1,3 +1,5 @@
+// This this is the wrong this
+
 // Global binding (default)
 
 console.log( this, window === this );
