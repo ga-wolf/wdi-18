@@ -5,6 +5,8 @@ This repository contains:
 - The code from all code-alongs; and
 - The slides from each day.
 
+
+Something else here.
 ___
 
 ### 1. Repository Setup
