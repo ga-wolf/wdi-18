@@ -1,4 +1,4 @@
-# WDi18 ([General Assembly, Sydney](https://generalassemb.ly/sydney))
+# WDi-18 ([General Assembly, Sydney](https://generalassemb.ly/sydney))
 ## Wolf's Repository
 
 This repository contains:
