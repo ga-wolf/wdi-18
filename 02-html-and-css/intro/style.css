@@ -1,0 +1,43 @@
+body {
+  background-color: ghostwhite;
+  /*text-align: center;*/
+}
+
+p {
+  color: hotpink;
+}
+
+/* Pseudo-selector */
+p:hover {
+  font-size: 25px;
+}
+
+img {
+  width: 200px;
+  border-radius: 50px;
+}
+
+/* This will select all elements with the class of trendy */
+.trendy {
+  color: chartreuse;
+}
+
+.trendier {
+  color: papayawhip;
+}
+
+.trendiest {
+  color: rebeccapurple;
+}
+
+img.cage {
+  border: 3px solid black;
+  border-radius: 50px;
+  transform: rotate( 0deg );
+  transition: all 0.5s;
+}
+
+img.cage:hover {
+  transform: rotate( 1080deg );
+  border-radius: 50%;
+}
