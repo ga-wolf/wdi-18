@@ -1,0 +1,63 @@
+.container {
+  background-color: gainsboro;
+  padding: 10px;
+  overflow: auto; /* Pay attention to floated elements */
+}
+
+.first-column {
+  height: 200px;
+  width: 50%;
+  background-color: white;
+  float: left;
+}
+
+.second-column {
+  height: 200px;
+  width: 50%;
+  background-color: peachpuff;
+  float: right;
+}
+
+.clear {
+  clear: both;
+}
+
+.columns {
+  background-color: black;
+  padding: 5px;
+  overflow: auto;
+}
+
+.one-quarter {
+  width: 25%;
+  height: 100px;
+  background-color: white;
+  float: left;
+  border: 2px solid red;
+  box-sizing: border-box;
+}
+
+.one-half {
+  height: 200px;
+  width: 50%;
+  background-color: ghostwhite;
+  float: left;
+  border: 10px solid red;
+  box-sizing: border-box;
+}
+
+/*
+  BOX-SIZING: BORDER-BOX;
+
+  Typically, when we set a width - it is only styling the content
+    Any padding or border added to that adds to the width
+
+  This line tells the browser to include the padding and the border in the specified width
+
+  div
+    - 200px wide
+    - 20px padding
+    - 10px border
+
+  The normal way:200px + 20px + 20px + 10px + 10px = 260px
+*/

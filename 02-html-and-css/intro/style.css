@@ -1,3 +1,53 @@
+/*
+  CSS Selection
+
+  tagname {} - select every element with that tag name
+  p.className {} - select all paragraphs with the class of className
+  .className {} - select every element with the class of className
+  p#someID {} - select all paragraphs with the id of someID
+  #someID {} - select all elements with the id of someID
+*/
+
+* {
+  color: red;
+}
+
+.selection {
+  background-color: gainsboro;
+}
+
+p#new {
+  color: black;
+}
+
+.alsoNew {
+  font-family: monospace;
+}
+
+.selection p {
+  color: black;
+}
+
+.new, .alsoNew {
+  text-decoration: underline;
+}
+
+.left, .right {
+  height: 200px;
+  background-color: orange;
+  border: 1px solid black;
+}
+
+.left {
+  width: 30%;
+  display: inline-block;
+}
+
+.right {
+  width: 50%;
+  display: inline-block;
+}
+
 body {
   background-color: ghostwhite;
   /*text-align: center;*/
@@ -8,9 +58,9 @@ p {
 }
 
 /* Pseudo-selector */
-p:hover {
+/*p:hover {
   font-size: 25px;
-}
+}*/
 
 img {
   width: 200px;
@@ -40,4 +90,69 @@ img.cage {
 img.cage:hover {
   transform: rotate( 1080deg );
   border-radius: 50%;
+}
+
+/*
+  DISPLAY PROPERTY
+
+  none - removes the element (it takes no space)
+  inline
+    - allows other elements to sit next to them
+    - can't set a width or a height
+
+  block
+    - does not allow other elements to sit next to them
+
+  inline-block
+    - allows other elements to sit next to them
+    - can set a width and a height
+*/
+
+.display * {
+  color: black;
+}
+
+.display span {
+  color: darkslategray;
+  display: inline;
+  width: 200px;
+  background-color: yellow;
+}
+
+/* Three column layout */
+
+.columns .first {
+  background-color: papayawhip;
+  height: 200px;
+  width: 30%;
+  display: inline-block;
+}
+
+.columns .second {
+  background-color: palegoldenrod;
+  height: 200px;
+  width: 30%;
+  display: inline-block;
+}
+
+.columns .third {
+  background-color: lightslategray;
+  height: 150px;
+  width: 30%;
+  display: inline-block;
+}
+
+/*
+  BOX MODEL
+
+  margin: how much gap between this element and other elements?
+  border: around the edge
+  padding: how much space between the edge and the actual content?
+  content: how much space is necessary?
+*/
+
+.boxModel {
+  height: 200px;
+  background-color: white;
+  border: 3px solid black;
 }
