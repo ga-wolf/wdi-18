@@ -37,6 +37,7 @@
 
 body {
   min-height: 2000px;
+  margin: 0;
 }
 
 .billCaption {
@@ -100,4 +101,40 @@ nav {
   background-image: url(http://66.media.tumblr.com/41a7e7c6fc1bcbe21ddf93ceb8f0171f/tumblr_n96p7lBR1T1qb8xvxo1_1280.jpg);
   background-size: cover;
   background-position: center;
+  position: relative;
+  font-family: monospace;
+  /* So that we can style child elements with position absolute */
+}
+
+.landingPage h1 {
+  position: absolute;
+  top: 30%;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  color: ghostwhite;
+}
+
+.landingPage a {
+  /* Will position in nearest non-static parent or the html tag */
+  position: absolute;
+  top: 50%;
+
+  color: #FFF;
+  text-decoration: none;
+
+  width: 200px;
+  left: 50%;
+  margin-left: -120px;
+
+  text-align: center;
+
+  border: 1px solid #FFF;
+  border-radius: 3px;
+  padding: 10px 20px;
+}
+
+.landingPage a:hover {
+  background-color: #FFF;
+  color: #000;
 }
