@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+
+  <!-- Generating full pages - ! or html:5 + TAB -->
+
+  <!-- Generating elements - tagname + TAB -->
+    <!-- p + TAB or p + CTRL + E -->
+  <p></p>
+  <li></li>
+
+  <!-- div.className -->
+  <div class="className"></div>
+  <!-- div.someClass.someOtherClass -->
+  <div class="someClass someOtherClass"></div>
+  <!-- div#someID -->
+  <div id="someID"></div>
+  <!-- div.someClass#someID -->
+  <div class="someClass" id="someID"></div>
+
+  <!-- Add text, use {} -->
+  <!-- h1{Hello World} -->
+  <h1>Hello World</h1>
+  <!-- p{Some paragraph} -->
+  <p>Some paragraph</p>
+
+  <!-- Add attributes, use [] -->
+  a[href="http://ga.co"]
+  <a href="http://ga.co"></a>
+  a[href="http://ga.co" target="_blank"]
+  <a href="http://ga.co" target="_blank"></a>
+
+  <!-- a[href="http://ga.co"]{GA} -->
+  <a href="http://ga.co">GA</a>
+
+  <!-- Create siblings, use + -->
+  <!-- h1+a -->
+  <h1></h1>
+  <a href=""></a>
+
+  <!-- header+div+footer -->
+  <header></header>
+  <div></div>
+  <footer></footer>
+
+  <!-- Create children, use > -->
+  <!-- header>h1 -->
+  <header>
+    <h1></h1>
+  </header>
+
+  <!-- ul>li -->
+  <ul>
+    <li></li>
+  </ul>
+
+  <!-- header>p>lorem -->
+  <header>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi modi inventore corporis officia nulla dolores adipisci aut, cupiditate pariatur accusamus qui debitis laboriosam velit nostrum optio earum accusantium, nam et!</p>
+  </header>
+
+  <!-- Create multiple, use * -->
+  <!-- p*3 -->
+  <p></p>
+  <p></p>
+  <p></p>
+
+  <!-- ul>li*2 -->
+  <ul>
+    <li></li>
+    <li></li>
+  </ul>
+
+  <!-- p*3>lorem -->
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime totam quaerat sequi distinctio perspiciatis, quidem fuga placeat accusantium nostrum blanditiis aspernatur itaque quis enim consectetur facilis! Aperiam doloribus in nihil!</p>
+  <p>Error similique quis earum nam consectetur ullam, veniam incidunt, vel architecto ducimus asperiores enim dolores laboriosam consequuntur aliquid animi fugit, itaque, ut inventore illo tempore? Fugit quibusdam et esse, nihil?</p>
+  <p>Libero necessitatibus consectetur, iste ea a nobis ducimus ex vero magni neque voluptatibus fugiat omnis maiores enim sunt aliquam eligendi corporis minima voluptate sint eum, quia corrupti. Tempore iste, maxime.</p>
+
+  <!-- Creating groups, use () -->
+  <!-- (header>h1)+(div>p) -->
+  <header>
+    <h1></h1>
+  </header>
+  <div>
+    <p></p>
+  </div>
+
+  <!-- ul>li.item$*5 -->
+
+
+</body>
+</html>
+
+<!-- !>(header>(h1>a[href="ga.co"]{General Assembly})+img[src="fillmurray.com"]+(ul>li*3))+(div.container>h2{Some article}+div.column.column$*5>p*2>lorem)+(footer>div.container>div.column.column$*3>ul>li*3) -->

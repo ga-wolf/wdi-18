@@ -1,0 +1,70 @@
+* {
+  /*bxz*/
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.flawed {
+  width: 300px;
+  background-color: salmon;
+  padding: 50px;
+  border: 10px solid black;
+
+  box-sizing: initial;
+}
+
+.perfect {
+  margin-top: 30px;
+  width: 300px;
+  background-color: lightslategray;
+  padding: 50px;
+  border: 10px solid black;
+}
+
+.centered {
+  width: 100px;
+  height: 100px;
+  background-color: papayawhip;
+
+  /* Variadic Attributes */
+  margin: 20px auto;
+}
+
+.display h2, .display p {
+  display: inline-block;
+}
+
+.display h2 {
+  width: 100px;
+  background: peachpuff;
+}
+
+.manipulate {
+  display: none;
+}
+
+.columns {
+  background: black;
+  width: 80%;
+  margin: 10px auto;
+  overflow: auto;
+}
+
+.column {
+  background: white;
+  border: 1px solid red;
+  display: inline-block;
+  float: left;
+  height: 200px;
+  width: 33.3%;
+  width: calc( 100% / 3 );
+}
+
+.half {
+  width: 50%;
+  height: 150px;
+  background-color: rebeccapurple;
+  border: 1px solid white;
+  float: left;
+}

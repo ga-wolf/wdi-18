@@ -1,0 +1,103 @@
+/*
+  POSITION ATTRIBUTE
+
+  Static
+    - Where the document flow would place this element
+    - Ignores top, left, right, and bottom properties
+  Relative
+    - Where to document flow would place this element
+    - Uses top, left, right and bottom properties
+    - Subtle animations
+    - Overlapping elements
+  Fixed
+    - Refers to the browser window
+    - Uses top, left, right and bottom properties
+    - Elements styled with this will scroll with you
+    - Nav bars that need to scroll down the page
+    - Back to top buttons
+    - Anything else that always needs to be visible
+    - Removes element from the document flow
+  Absolute
+    - Refers to the entire document
+    - Uses top, left, right and bottom properties
+    - Elements that use this won't scroll with you
+    - Animations
+    - Positioning things exactly
+    - Removes element from the document flow
+*/
+
+
+
+
+
+
+
+
+
+
+body {
+  min-height: 2000px;
+}
+
+.billCaption {
+  position: relative;
+  top: -35px;
+}
+
+.callToAction {
+  background-color: #FFFFFF;
+  padding: 10px 20px;
+  border: 1px solid #0000FF;
+  border-radius: 5px;
+  color: #0000FF;
+  position: relative;
+  cursor: pointer;
+  top: 0px;
+  outline: none;
+  transition: all 0.5s;
+}
+
+.callToAction:hover {
+  background-color: #0000FF;
+  top: 5px;
+  color: #FFFFFF;
+}
+
+body {
+  margin-top: 75px;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 75px;
+  width: 100%;
+  background-color: gainsboro;
+}
+
+.backToTop {
+  width: 50px;
+  height: 50px;
+  background: black;
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+}
+
+.absolute {
+  width: 100px;
+  height: 100px;
+  background: rebeccapurple;
+}
+
+
+/* Fullscreen landing page */
+
+.landingPage {
+  height: 400px;
+  width: 100%;
+  background-image: url(http://66.media.tumblr.com/41a7e7c6fc1bcbe21ddf93ceb8f0171f/tumblr_n96p7lBR1T1qb8xvxo1_1280.jpg);
+  background-size: cover;
+  background-position: center;
+}
