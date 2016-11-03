@@ -125,6 +125,6 @@ var everySoOften = function () {
   console.log("I am called every so often");
 };
 
-window.setInterval( everySoOften, 2000 );
+window.setInterval( everySoOften, 1000 );
 
 // Animations
