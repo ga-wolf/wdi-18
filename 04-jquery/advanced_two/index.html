@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/jquery.typeit/4.2.3/typeit.min.js"></script>
+  <script type="text/javascript" src="main.js"></script>
+  <link rel="stylesheet" href="/css/master.css" media="screen" title="no title">
+</head>
+<body>
+  <div class="container">
+    <h1>DOM Readiness, Event Delegation, Method Chaining, jQuery Plugins</h1>
+    <h2>DOM Readiness</h2>
+    <p>In order to do cool jQuery stuff, we need to make sure that all of the content in the HTML document has been parsed by the browser before our script is run, so put all your DOM-related jQuery code in a function that is called when the `document` is `ready` - <span class="mono">$(document).ready(function() { } );</span></p>
+    <p id="dom_ready_text"></p>
+
+    <h2>Event Delegation</h2>
+    <p>Event Listeners (like <span class="mono">$("p").on("click", function() {});</span>) are added to elements when the page is first loaded. This means that if we dynamically add elements to the page <i>after</i> the page is loaded, any Event Listeners set up in our JS will not be attached to those new elements.</p>
+    <p>One way to get around this is with <emph>Event Delegation</emph>. Here, we bind the event listener to an element that we <i>know</i> will be in the DOM when the page is loaded, and pass in an additional 'filter' argument to the event handler. Eg: <span class="mono">$(".container").on("click", "p", function() { console.log("paragraph clicked")}) </span>.</p>
+
+    <h2 class="plugins"></h2>
+    <p class="plugins_para">  </p>
+  </div>
+
+</body>
+</html>
