@@ -1,10 +1,10 @@
 require 'pry'
 
-# letters = [ "a", "b", "c", "d", "e" ]
-#
-# letters.each do |letter|
-#   p letter
-# end
+letters = [ "a", "b", "c", "d", "e" ]
+
+letters.each do |letter|
+  p letter
+end
 #
 # # [ 1, 2, 3, 4, 5 ].each do |num|
 # #   p num
