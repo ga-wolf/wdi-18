@@ -1,0 +1,21 @@
+<h3>This is where we show our form</h3>
+
+<form action="/results" method="GET">
+
+  <p>
+    <label>What is your first number?</label>
+    <input type="number" name="first_num" placeholder="First number?">
+      <!-- I am interested in whatever is typed here -->
+      <!-- Can you save it in params under a first_num key -->
+      <!-- params = { "first_num" => "12929" } -->
+  </p>
+
+  <p>
+    <label>What is your second number?</label>
+    <input type="number" name="second_num" placeholder="Second number?">
+    <!-- params = { "first_num" => "12929", "second_num" => "12" } -->
+  </p>
+
+  <input type="submit" value="Add two numbers">
+
+</form>
