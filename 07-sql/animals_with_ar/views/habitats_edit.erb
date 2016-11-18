@@ -1,0 +1,14 @@
+<h3>This should edit a habitat - GET /habitats/:id/edit</h3>
+
+<form action="/habitats/<%= @habitat.id %>" method="POST">
+  <p>
+    <label>Landscape:</label>
+    <input type="text" name="landscape" value="<%= @habitat.landscape %>">
+  </p>
+  <p>
+    <label>Climate:</label>
+    <input type="text" name="climate" value="<%= @habitat.climate %>">
+  </p>
+
+  <input type="submit" value="Edit Habitat">
+</form>

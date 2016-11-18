@@ -1,0 +1,18 @@
+<h3>THIS IS THE SHOW PAGE FOR A HABITAT - GET /habitats/:id</h3>
+
+<h5>Landscape</h5>
+<p><%= @habitat.landscape %></p>
+
+<hr>
+
+<h5>Climate</h5>
+<p><%= @habitat.climate %></p>
+
+<div class="controls">
+  <a href="/habitats/<%= @habitat.id %>/edit">
+    Edit this habitat
+  </a>
+  <a href="/habitats/<%= @habitat.id %>/delete">
+    Delete this habitat
+  </a>
+</div>

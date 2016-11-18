@@ -8,13 +8,46 @@ ActiveRecord::Base.establish_connection(
   :database => 'database.db',
   :adapter => 'sqlite3'
 )
-ActiveRecord::Base.logger = Logger.new( STDERR )
+# ActiveRecord::Base.logger = Logger.new( STDERR )
 
 # We have a table called animals
 # We need a class called Animal
 class Animal < ActiveRecord::Base
+  belongs_to :habitat
 end
 # Now the class (model) Animal can talk to the database
+
+# This class can talk to the habitats table
+class Habitat < ActiveRecord::Base
+  has_many :animals
+end
+
+mountain = Habitat.create(:landscape => "Mountain")
+# mountain has a primary key, the ID
+
+mountain_goat = Animal.create({
+  :species => "Mountain goat",
+  :habitat_id => mountain.id # foreign key
+})
+p mountain_goat
+p mountain_goat.habitat
+
+mountain_lion = Animal.create({
+  :species => "Mountain lion",
+  :habitat_id => mountain.id
+})
+p mountain_lion
+p mountain_lion.habitat
+
+mount_franklin = Animal.create({
+  :species => "Mount franklin",
+  :habitat_id => mountain.id
+})
+p mount_franklin
+p mount_franklin.habitat
+
+p mountain.animals
+
 
 after do
   ActiveRecord::Base.connection.close
@@ -86,4 +119,60 @@ post "/animals/:id" do
   })
 
   redirect "/animals/#{params["id"]}"
+end
+
+# RESTful Interface (Representational State Transfer)
+# Consistency in URLS
+
+# CRUD system
+
+# Read
+# GET /habitats - INDEX - SELECT - .all
+  # Show every habitat in our system
+# GET /habitats/:id - SHOW - SELECT - .find_by
+  # Show a single habitat in our system
+
+get "/habitats" do
+  @habitats = Habitat.all
+  erb :habitats_index
+end
+
+get "/habitats/new" do
+  erb :habitats_new
+end
+
+post "/habitats" do
+  habitat = Habitat.create({
+    :landscape => params["landscape"],
+    :climate => params["climate"]
+  })
+  redirect "/habitats"
+end
+
+# Edit step
+get "/habitats/:id/edit" do
+  @habitat = Habitat.find_by :id => params["id"]
+  erb :habitats_edit
+end
+
+# Update step
+post "/habitats/:id" do
+  habitat = Habitat.find_by :id => params["id"]
+  habitat.update({
+    :landscape => params["landscape"],
+    :climate => params["climate"]
+  })
+  redirect "/habitats/#{ params['id'] }"
+end
+
+get "/habitats/:id/delete" do
+  habitat = Habitat.find_by :id => params["id"]
+  habitat.destroy
+
+  redirect "/habitats"
+end
+
+get "/habitats/:id" do
+  @habitat = Habitat.find_by :id => params["id"]
+  erb :habitats_show
 end

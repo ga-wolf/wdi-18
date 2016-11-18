@@ -1,0 +1,10 @@
+<h3>THIS SHOULD SHOW ALL HABITATS - INDEX /habitats</h3>
+
+<% @habitats.each do |h| %>
+  <p>
+    <a href="/habitats/<%= h.id %>">
+      Landscape: <%= h.landscape %>.
+      Climate: <%= h.climate %>.
+    </a>
+  </p>
+<% end %>
