@@ -1,0 +1,20 @@
+<h3>
+  This is the profile page of animal <%= @id %>
+</h3>
+
+<p>ID: <%= @animal["id"] %></p>
+<p>Species: <%= @animal["species"] %></p>
+<p>Description: <%= @animal["description"] %></p>
+<p>
+  Image:
+  <img src="<%= @animal["image"] %>">
+</p>
+
+<div class="controls">
+  <a href="/animals/<%= @animal["id"] %>/delete">
+    Delete this animal
+  </a> |
+  <a href="/animals/<%= @animal["id"] %>/edit">
+    Edit this animal
+  </a>
+</div>

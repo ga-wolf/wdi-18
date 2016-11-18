@@ -1,0 +1,21 @@
+<h3>
+  This should edit the animal with the ID of <%= @id %>
+</h3>
+
+<%= @animal %>
+
+<form action="/animals/<%= @id %>" method="POST">
+  <p>
+    <label for="">Species:</label>
+    <input type="text" name="species" placeholder="Species" value="<%= @animal["species"] %>">
+  </p>
+  <p>
+    <label for="">Image:</label>
+    <input type="text" name="image" placeholder="Image" value="<%= @animal["image"] %>">
+  </p>
+  <p>
+    <label for="">Description:</label>
+    <input type="text" name="description" placeholder="Description" value="<%= @animal["description"] %>">
+  </p>
+  <input type="submit" value="Update animal">
+</form>
