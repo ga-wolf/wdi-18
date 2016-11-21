@@ -1,0 +1,20 @@
+body {
+  margin: 0;
+  background-color: dodgerblue;
+  font-family: monospace;
+  text-align: center;
+}
+
+.container {
+  padding: 0 5px;
+  background-color: ghostwhite;
+  overflow: hidden;
+  width: 90%;
+  max-width: 1000px;
+  margin: 0 auto;
+  min-height: 100vh;
+}
+
+.container img {
+  max-width: 100%;
+}

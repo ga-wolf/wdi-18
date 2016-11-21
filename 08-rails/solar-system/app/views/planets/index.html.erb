@@ -1,0 +1,18 @@
+<h3>A list of all planets</h3>
+
+<ul>
+  <% @planets.each do |p| %>
+    <li>
+      <a href="/planets/<%= p.id %>">
+        <%= p.name %>
+      </a>
+    </li>
+  <% end %>
+</ul>
+
+<!--
+
+  GET /planets/new
+    app/views/planets/new.html.erb
+
+-->
