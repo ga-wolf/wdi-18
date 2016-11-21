@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>MonaApp</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+  <h1>MONA App</h1>
+
+  <nav>
+    <!-- <a href="/">Home</a> -->
+    <%= link_to "Home", "/" %> |
+    <!-- <a href="/about">About</a> -->
+    <%= link_to "About", "/about" %>
+  </nav>
+
+  <%= yield %>
+
+</body>
+</html>
