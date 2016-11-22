@@ -16,3 +16,11 @@
 class Work < ActiveRecord::Base
   belongs_to :artist
 end
+
+# w = Work.first
+# w.artist_id = 1
+# w.artist
+
+# w = Work.last
+# w.artist_id = 200
+# w.artist

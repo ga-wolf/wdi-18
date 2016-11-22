@@ -15,3 +15,11 @@
 class Artist < ActiveRecord::Base
   has_many :works
 end
+
+# a = Artist.first # id is 1
+#
+# w1 = Work.create :artist_id => 1
+# w2 = Work.create :artist_id => 1
+# w3 = Work.create :artist_id => 2
+#
+# a.works # [ w1, w2 ]

@@ -13,6 +13,7 @@ class WorksController < ApplicationController
 
   def create
     work = Work.create work_params
+    # binding.pry
     # redirect_to work_path( work )
     redirect_to work
   end
@@ -35,6 +36,6 @@ class WorksController < ApplicationController
 
   private
     def work_params
-      params.require(:work).permit(:title, :year, :medium, :style, :image)
+      params.require(:work).permit(:title, :year, :medium, :style, :image, :artist_id)
     end
 end

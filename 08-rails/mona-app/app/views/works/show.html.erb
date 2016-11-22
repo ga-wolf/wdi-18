@@ -8,6 +8,13 @@
 
 <p>Style: <%= @work.style %></p>
 
+<% if @work.artist %>
+  <p>
+    Artist:
+    <%= link_to( @work.artist.name, "/artists/#{@work.artist.id}" ) %>
+  </p>
+<% end %>
+
 <div class="controls">
   <%= link_to "Edit Work", edit_work_path( @work ) %>
   <%= link_to "Delete Work", work_path( @work ), :method => :delete, :data => { :confirm => "Are you sure?" } %>

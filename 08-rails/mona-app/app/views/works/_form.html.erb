@@ -19,6 +19,11 @@
     <%= f.label :image %>
     <%= f.url_field :image, :required => true %>
   </p>
+  <p>
+    <%= f.label :artist_id %>
+    <%#= f.number_field :artist_id %>
+    <%= f.collection_select( :artist_id, Artist.all, :id, :name, :include_blank => true ) %>
+  </p>
 
   <%= f.submit %>
 <% end %>
