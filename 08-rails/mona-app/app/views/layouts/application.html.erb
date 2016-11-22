@@ -15,7 +15,9 @@
     <%= link_to "Home", "/" %> |
     <%= link_to "About", "/about" %> |
     <%= link_to "All Artists", "/artists" %> |
-    <%= link_to "Create Artist", "/artists/new" %>
+    <%= link_to "Create Artist", "/artists/new" %> |
+    <%= link_to "All Works", works_path() %> |
+    <%= link_to "Create Work", new_work_path() %>
   </nav>
 
   <%= yield %>

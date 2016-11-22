@@ -9,7 +9,8 @@
 </ul>
 
 <div class="controls">
-  <!-- Edit Delete -->
+  <%= link_to "Edit Artist", "/artists/#{@artist.id}/edit" %>
+  <%= link_to "Delete Artist", "/artists/#{@artist.id}", :method => :delete, :data => { :confirm => "Are you sure?" } %>
 </div>
 
 <!-- List of associated works -->

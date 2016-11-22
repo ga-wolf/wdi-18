@@ -24,6 +24,18 @@ class ArtistsController < ApplicationController
     @artist = Artist.find_by :id => params["id"]
   end
 
+  def update
+    artist = Artist.find_by :id => params["id"]
+    artist.update artist_params
+    redirect_to "/artists/#{artist.id}"
+  end
+
+  def destroy
+    artist = Artist.find_by :id => params["id"]
+    artist.destroy
+    redirect_to "/artists"
+  end
+
   private
     def artist_params
       # Strong params (for security) - using whitelisting to guarantee valid data

@@ -1,0 +1,14 @@
+<h3><%= @work.title %></h3>
+
+<%= image_tag @work.image %>
+
+<p>Year: <%= @work.year %></p>
+
+<p>Medium: <%= @work.medium %></p>
+
+<p>Style: <%= @work.style %></p>
+
+<div class="controls">
+  <%= link_to "Edit Work", edit_work_path( @work ) %>
+  <%= link_to "Delete Work", work_path( @work ), :method => :delete, :data => { :confirm => "Are you sure?" } %>
+</div>
