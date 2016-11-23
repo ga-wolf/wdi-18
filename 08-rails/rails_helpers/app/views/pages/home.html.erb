@@ -1,0 +1,19 @@
+<h2> URL Helpers </h2>
+
+<h3> Without URL helpers </h3>
+<a href="/numbers">Number Helpers</a>
+<a href="/text">Text Helpers</a>
+<a href="/date">Date Helpers</a>
+
+<h3> With URL helpers </h3>
+<a href="http:/www.google.com">Google</a>
+<p><%= link_to('Number Helpers', numbers_path)%></p>
+<p><%= link_to('Text Helpers', text_path)%></p>
+<p><%= link_to('Date Helpers', date_path)%></p>
+<p><%= link_to('Single Number', single_number_path(@num)) %></p>
+
+<%= image_tag('jack.jpg')%>
+
+<%= link_to(date_path) do %>
+  <%= image_tag('jack.jpg')%>
+<% end %>
