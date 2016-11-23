@@ -1,16 +1,14 @@
 # == Schema Information
 #
-# Table name: songs
+# Table name: artists
 #
 #  id         :integer          not null, primary key
 #  name       :text
-#  artist_id  :integer
-#  album_id   :integer
+#  image      :text
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
 
-class Song < ActiveRecord::Base
-  belongs_to :album
-  belongs_to :artist
+class Artist < ActiveRecord::Base
+  has_many :songs
 end

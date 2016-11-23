@@ -1,16 +1,15 @@
 # == Schema Information
 #
-# Table name: songs
+# Table name: mixtapes
 #
 #  id         :integer          not null, primary key
 #  name       :text
-#  artist_id  :integer
-#  album_id   :integer
+#  user_id    :integer
+#  is_fire    :boolean
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
 
-class Song < ActiveRecord::Base
-  belongs_to :album
-  belongs_to :artist
+class Mixtape < ActiveRecord::Base
+  belongs_to :user
 end

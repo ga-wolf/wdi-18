@@ -10,4 +10,6 @@
 #
 
 class Album < ActiveRecord::Base
+  has_many :songs
+  # Defines the method ` .songs ` on every album in our system
 end

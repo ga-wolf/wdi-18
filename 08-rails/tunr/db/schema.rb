@@ -11,11 +11,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161123015705) do
+ActiveRecord::Schema.define(version: 20161123043148) do
 
   create_table "albums", force: :cascade do |t|
     t.text     "name"
     t.text     "image"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "artists", force: :cascade do |t|
+    t.text     "name"
+    t.text     "image"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "mixtapes", force: :cascade do |t|
+    t.text     "name"
+    t.integer  "user_id"
+    t.boolean  "is_fire"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -26,6 +41,16 @@ ActiveRecord::Schema.define(version: 20161123015705) do
     t.integer  "album_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.text     "email"
+    t.text     "name"
+    t.boolean  "admin",           default: false
+    t.text     "image"
+    t.text     "password_digest"
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
   end
 
 end
