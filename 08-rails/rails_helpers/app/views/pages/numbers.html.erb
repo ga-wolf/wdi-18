@@ -1,0 +1,5 @@
+<h2> Number helpers </h2>
+
+<p>Large number: <%= number_to_human(@large_number) %></p>
+<p>Phone number: <%= number_to_phone(@phone_number, :country_code => 61, :extension => 234) %></p>
+<p>Price: <%= number_to_currency(@price) %> </p>

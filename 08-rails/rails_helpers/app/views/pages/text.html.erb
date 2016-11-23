@@ -1,0 +1,16 @@
+<h2>Text Helpers</h2>
+
+<p> I have <%= pluralize(@friends, "friend")%>.</p>
+<p> I have <%= pluralize(@enemies, "enemy")%>.</p>
+<p> Jack has <%= pluralize(42, "virus")%>.</p>
+<p> <%= truncate(@story, :length => 120, :seperator => " ", :omission => " (Click here for full description)") %> </p>
+
+<ul>
+  <% @numbers.each do |num| %>
+    <li style="background-color: <%= cycle('gainsboro', 'rebeccapurple', 'lemonchiffon', 'hotpink', 'red')%>">
+      <%= num %>
+    </li>
+  <% end %>
+
+
+</ul>
