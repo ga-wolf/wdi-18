@@ -1,0 +1,13 @@
+<h3><%= @user.name %>'s Profile</h3>
+
+<ul>
+  <li><%= @user.email %></li>
+  <li><%= @user.image %></li>
+  <li><%= @user.admin %></li>
+  <li><%= @user.password_digest %></li>
+</ul>
+
+<div class="controls">
+  <%= link_to "Edit user", edit_user_path( @user ) %> |
+  <%= link_to "Delete account", user_path( @user ), :method => :delete, :data => { :confirm => "Are you sure?" } %>
+</div>
