@@ -7,7 +7,25 @@
   <li><%= @user.password_digest %></li>
 </ul>
 
-<div class="controls">
-  <%= link_to "Edit user", edit_user_path( @user ) %> |
-  <%= link_to "Delete account", user_path( @user ), :method => :delete, :data => { :confirm => "Are you sure?" } %>
-</div>
+<% if @user == @current_user %>
+  <div class="controls">
+    <%= link_to "Edit user", edit_user_path( @user ) %> |
+    <%= link_to "Delete account", user_path( @user ), :method => :delete, :data => { :confirm => "Are you sure?" } %>
+  </div>
+<% end %>
+
+<h5>User Mixtapes</h5>
+
+<% @user.mixtapes.each do |mix| %>
+  <h6><%= link_to( mix.name, mixtape_path(mix) ) %></h6>
+
+  <ul>
+    <% mix.songs.each do |song| %>
+      <li>
+        <%= link_to( song.name, song_path(song) ) %>
+        by
+        <%= link_to(song.artist.name, artist_path(song.artist)) %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
