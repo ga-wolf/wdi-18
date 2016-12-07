@@ -1,0 +1,41 @@
+<h3>Dynamic Content</h3>
+
+<div id="dashboard">
+  <h2 class="currentTime"></h2>
+  <p class="lotto"></p>
+  <p class="uptime"></p>
+  <p class="fortune"></p>
+</div>
+
+<div id="allMessages">
+  <h3 id="messageCount"></h3>
+  <ul></ul>
+</div>
+
+<!-- div#messageOne>p.body+p.author -->
+<div id="messageOne">
+  <p class="body"></p>
+  <p class="author"></p>
+</div>
+
+<!-- div#lucky>button -->
+<div id="lucky">
+  <button>Get new lucky number</button>
+  <p>
+    <%= @lotto_numbers %>
+  </p>
+</div>
+
+<div id="uptime">
+  <button>What's uptime?</button>
+  <p>
+    <%= @uptime %>
+  </p>
+</div>
+
+<div id="fortune">
+  <button>Get a new fortune</button>
+  <p>
+    <%= @fortune %>
+  </p>
+</div>
