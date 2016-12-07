@@ -4,7 +4,7 @@ class PagesController < ApplicationController
   end
 
   def generator
-    
+
     options = {
       titles: ["Mr", "Lord", "Count"],
       first_names: ["Lewis", "Cooper", "Jack"],
@@ -19,7 +19,7 @@ class PagesController < ApplicationController
 
     respond_to do |format|
       format.json { render :json => @cat_name}
-      format.html { render :template => 'pages/generator'}
+      format.html
     end
 
 
