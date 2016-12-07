@@ -1,0 +1,5 @@
+Message.create :body => "This is the first message", :author => "Groucho"
+Message.create :body => "This is the second message", :author => "Harpo"
+Message.create :body => "This is the third message", :author => "Chico"
+Message.create :body => "This is the fourth message", :author => "Gummo"
+Message.create :body => "This is the fifth message", :author => "Zeppo"
