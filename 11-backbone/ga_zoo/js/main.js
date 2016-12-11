@@ -104,7 +104,115 @@
 // newCinema.add( generic );
 //
 // console.log( newCinema.length );
-
+//
+// var ourMixedCollection = new Cinema([
+//   { title: "Movie one", goodMovie: false, tags: ["comedy"] },
+//   { title: "Movie two", goodMovie: true, tags: ["action"] },
+//   { title: "Movie three", goodMovie: false, tags: ["action"] },
+//   { title: "Movie four", goodMovie: true, tags: ["action"] },
+//   { title: "Movie five", goodMovie: false, tags: ["horror", "comedy"] },
+//   { title: "S movie", tags: ["comedy"] },
+//   { title: "s film", tags: ["horror"] },
+//   { title: "J movie", tags: ["history", "comedy"] },
+//   { title: "z movie", tags: ["documentary"] },
+//   { title: "Q movie", tags: ["documentary", "history"] }
+// ]);
+//
+// var searchByTag = function ( tag ) {
+//   return ourMixedCollection.filter(function ( movie ) {
+//     var tags = movie.get("tags");
+//     var tagExists = _.contains( tags, tag );
+//
+//     return tagExists;
+//   });
+// };
+//
+// var allHistoryMovies = searchByTag( "history" );
+// var allComedyMovies = searchByTag( "comedy" );
+//
+// console.log( "Number of history movies: ", allHistoryMovies.length );
+// console.log( "Number of comedy movies: ", allComedyMovies.length );
+//
+// console.log( ourMixedCollection.pluck("title") );
+//
+//
+// // Search by tag function
+//   // searchByTag( "comedy" )
+//   // searchByTag( "documentary" )
+//
+//
+//
+//
+//
+//
+// var badMovies = ourMixedCollection.where({ goodMovie: false });
+// ourMixedCollection.remove( badMovies );
+// console.log( ourMixedCollection.length );
+//
+// var searchMovies = function ( letter ) {
+//
+//   var movies = ourMixedCollection.filter(function (movie) {
+//     var lowercasedMovieTitle = movie.get("title").toLowerCase();
+//
+//     if ( lowercasedMovieTitle.startsWith( letter ) ) {
+//       return true;
+//     }
+//     return false;
+//   });
+//
+//   return movies;
+//
+// };
+//
+// console.log( ourMixedCollection.length );
+//
+// var sMovies = searchMovies( "s" );
+// ourMixedCollection.remove( sMovies );
+//
+// console.log( ourMixedCollection.length );
+//
+//
+// var m1 = new Movie({ id: 200, title: "Satantango" });
+// var m2 = new Movie({ id: 201, title: "23" });
+// var m3 = new Movie({ id: 202, title: "42" });
+// var m4 = new Movie({ id: 203, title: "Duck Soup" });
+//
+// var moviesWithIDs = new Cinema([m1, m2, m3, m4]);
+//
+// var firstMovieInCollection = moviesWithIDs.at( 0 ); // Index-based
+//
+// var movieById = moviesWithIDs.get( 201 );
+//
+// console.log( movieById );
+// console.log( firstMovieInCollection );
+//
+// var movieName = moviesWithIDs.get( 202 ).get("title");
+// console.log( movieName );
+//
+// var cid = m4.cid;
+// console.log( cid );
+//
+// var c24 = moviesWithIDs.get( cid );
+// console.log( c24 );
+//
+// var m1 = new Movie({ id: 200, title: "Satantango" });
+// var m2 = new Movie({ id: 201, title: "23" });
+// var m3 = new Movie({ id: 202, title: "42" });
+// var m4 = new Movie({ id: 203, title: "Duck Soup" });
+//
+// var newCinema = new Cinema( [m2, m3] );
+// newCinema.add( m4, { at: 0 } );
+// newCinema.add( m1, { at: 2 } );
+//
+// newCinema.each(function (movie) {
+//   console.log( movie.get("id") );
+// });
+//
+// var sortedMovies = newCinema.sortBy( "title" );
+//
+// _.each(sortedMovies, function (movie) {
+//   console.log( movie.get("title") );
+// });
 
 // var Dog = Backbone.Model.extend({
 //   defaults: {
@@ -240,3 +348,26 @@ gaZoo.add( kangaroo );
 gaZoo.add( butterfly );
 
 gaZoo.remove( kangaroo );
+
+var bird = new Animal({ type: "Eagle", living: false });
+var dumboOctopus = new Animal({ type: "Dumbo Octopus" });
+var japaneseSpiderCrab = new Animal({ type: "Japanese Spider Crab", living: false });
+var theGerenuk = new Animal({ type: "Gerenuk" });
+var quokka = new Animal({ type: "Quokka" });
+
+gaZoo.add([bird, dumboOctopus, japaneseSpiderCrab, theGerenuk, quokka]);
+
+gaZoo.each(function (animal) {
+  var message = "The zoo contains: " + animal.get("type");
+  console.log( message );
+});
+
+// Remove all dead animals from the gaZoo
+var deadAnimals = gaZoo.where({ living: false });
+gaZoo.remove( deadAnimals );
+
+var allTypes = gaZoo.pluck("type");
+console.log( allTypes );
+
+var sortedByType = gaZoo.sortBy("type");
+console.log( sortedByType );
