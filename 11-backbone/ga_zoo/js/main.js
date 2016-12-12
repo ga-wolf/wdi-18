@@ -371,3 +371,165 @@ console.log( allTypes );
 
 var sortedByType = gaZoo.sortBy("type");
 console.log( sortedByType );
+
+console.clear();
+
+var ZooView = Backbone.View.extend({
+  el: "#app",
+    // this.el - pure DOM node ( document.querySelector approach )
+    // this.$el - jQuery selected DOM node
+
+  events: {
+    "click h1": "clickedHeading",
+    "click li": "showAnimal",
+    "click span": "destroyAnimal"
+  },
+
+  destroyAnimal: function ( event ) {
+    // Figure out which span was clicked
+    var $span = $( event.currentTarget );
+    // Find the parent LI of that span
+    var $li = $span.parent();
+    // Find just the animal type
+    var text = $li.text();
+    var animalType = text.replace(" | delete", "");
+    // Find the animal with that type in the collection
+    var animal = this.collection.findWhere({
+      type: animalType
+    });
+    var oldLength = this.collection.length;
+    // Remove it
+    this.collection.remove( animal );
+    console.log( oldLength + " down to " + this.collection.length );
+  },
+
+  showAnimal: function ( e ) {
+    var $clickedLI = $( e.currentTarget );
+    $clickedLI.css({
+      color: 'red'
+    });
+    router.navigate( "/animals/1", true );
+  },
+
+  clickedHeading: function () {
+    console.log("The heading was clicked");
+  },
+
+  initialize: function () {
+    console.log( "A new ZooView was created" );
+    this.listenTo( this.collection, 'remove', this.render );
+    this.listenTo( this.collection, 'add', this.render );
+  },
+
+  render: function () {
+    var $appViewHome = this.$el;
+    $appViewHome.html( "<h1>The animals in our zoo</h1>" );
+
+    var $ul = $("<ul></ul>");
+
+    this.collection.each(function (animal) {
+      var type = animal.get("type");
+      var $li = $("<li></li>");
+
+      var $span = $("<span></span>");
+      $span.text(" | delete");
+      $li.text( type );
+      $li.append( $span );
+
+      $ul.append( $li );
+    });
+
+    $appViewHome.append( $ul );
+
+  }
+});
+
+gaZoo.add([
+  { type: "Stink Badger" },
+  { type: "Horse" },
+  { type: "Blue ring octopus" }
+]);
+
+var deleteAnimal = function ( name ) {
+  var animal = gaZoo.findWhere({
+    type: name
+  });
+  gaZoo.remove( animal );
+};
+
+deleteAnimal("Quokka");
+deleteAnimal("Horse");
+
+var AnimalView = Backbone.View.extend({
+  el: "#app",
+  render: function () {
+    this.$el.html("<h1>Showing one animal</h1>");
+  }
+});
+
+var ErrorView = Backbone.View.extend({
+  el: "#app",
+  render: function () {
+    this.$el.html("<h1>SOMETHING WENT WRONG</h1>");
+  }
+});
+
+var Router = Backbone.Router.extend({
+  routes: {
+    '': 'showZoo',
+    'animals': 'showZoo',
+    'animals/:id': 'showAnimal',
+    '*args': 'error'
+  },
+  error: function () {
+    var ev = new ErrorView();
+    ev.render();
+  },
+  showAnimal: function () {
+    console.log( "An animal should be shown" );
+    var av = new AnimalView();
+    av.render();
+  },
+  showZoo: function () {
+    console.log("All animals should be shown");
+    var zv = new ZooView({
+      collection: gaZoo
+    });
+    zv.render();
+  }
+});
+
+var router = new Router();
+
+$(document).ready(function () {
+  Backbone.history.start();
+  // Start listening for hash-based URLs
+    // Start calling functions based on the hash fragment
+});
+
+var goHome = function () {
+  router.navigate("/", true);
+};
+
+var animalShowPage = function () {
+  router.navigate("/animals/1", true);
+};
+
+var throwErrorPage = function () {
+  router.navigate( "/asdfghjkl", true );
+};
+
+// Models
+  // Represent a single resource (typically a single record in a database)
+  // Has change events ( "change:type", "change" )
+// Collections
+  // Represent multiple resources (typically multiple records)
+  // Has events ("add", "remove")
+// Views
+  // We can specify the target element or we can create an element (this.el && this.$el)
+  // Can pay attention to passed in collections and models
+  // Figure out what data the view needs!
+// Routers
+  // Decides which view should be showing at a given point
+    // Uses the hash fragment
+  // To change pages - ` router.navigate("/someURL", true) `

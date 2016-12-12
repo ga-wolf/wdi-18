@@ -1,0 +1,25 @@
+<div id="app">
+  <h1>THIS IS WHERE OUR BACKBONE SHOULD BE LOADED</h1>
+  <h3>A little bit like a front-end framework yield statement</h3>
+</div>
+
+<script type="html/template" id="appViewTemplate">
+  <div id="appView">
+    <h1>My blog with all my feelings</h1>
+    <ul id="posts"></ul>
+  </div>
+</script>
+
+<script type="html/template" id="postViewTemplate">
+  <div id="postView">
+    <h1>
+      <%%= title %>
+    </h1>
+    <h2>
+      By <%%= author %>
+    </h2>
+    <p>
+      <%%= content %>
+    </p>
+  </div>
+</script>
