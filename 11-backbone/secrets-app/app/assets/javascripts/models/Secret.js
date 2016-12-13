@@ -16,7 +16,7 @@ var s = new app.Secret();
 // Create
   // POST /secrets => secrets#create
     // This should only run if there is no ID
-  s.save();
+  // s.save();
 
 // THESE SHOULD ONLY RUN IF THERE IS AN ID
   // Read

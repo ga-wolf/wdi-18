@@ -23,10 +23,14 @@ app.SecretInputView = Backbone.View.extend({
     // I want to select the textarea and get the value of it
     var userInput = this.$el.find("textarea").val();
 
-    var sv = new app.SecretView();
-    sv.render();
+    var secret = new app.Secret({
+      content: userInput
+    });
+    secret.save().done(function () {
+      app.secrets.add( secret );
+    });
 
-    // Eventually I want to create a secret with this value
+    this.$el.find("textarea").val('').focus();
   },
 
   render: function () {

@@ -4,15 +4,19 @@ app.SecretView = Backbone.View.extend({
   tagName: 'li',
 
   render: function () {
-    var content = "Dummy secret for the moment";
+    var content = this.model.get( "content" );
     this.$el.text( content );
     this.$el.prependTo( "#secrets" );
   }
 });
 
-window.setTimeout( function () {
-  for ( var i = 0; i < 6; i += 1 ) {
-    var sv = new app.SecretView();
+var createSecretViews = function () {
+
+  secrets.each(function ( secret ) {
+    var sv = new app.SecretView({
+      model: secret
+    });
     sv.render();
-  }
-}, 300 );
+  });
+
+};
