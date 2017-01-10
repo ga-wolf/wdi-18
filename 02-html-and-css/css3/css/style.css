@@ -1,0 +1,58 @@
+.panel {
+  background-color: dodgerblue;
+  color: ghostwhite;
+  box-shadow: 5px 5px 3px 3px tomato;
+}
+
+h1 {
+  text-shadow: 1px 1px 2px black;
+}
+
+a {
+  display: inline-block;
+  padding: 5px 10px;
+  margin: 10px;
+  border: 3px solid gainsboro;
+  text-decoration: none;
+  color: #FFFFFF;
+  font-size: 50px;
+  /* which CSS properties | duration | timing function | delay  */
+  transition: color 0.5s ease-in-out 0.1s;
+}
+
+a:hover {
+  color: #000;
+  padding: 10px 20px;
+}
+
+@keyframes fade-in-and-out {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+.unsplash {
+  width: 400px;
+  height: 400px;
+  animation: fade-in-and-out 1s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+@keyframes move-from-left-to-right {
+  0% {
+    left: 0vw;
+  }
+  100% {
+    left: 90vw;
+  }
+}
+
+.bill {
+  position: relative;
+  width: 10vw;
+  animation-name: move-from-left-to-right;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: steps( 10 );
+}
