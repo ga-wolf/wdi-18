@@ -1,0 +1,50 @@
+desc "Say hello to our new TA (Badger v2.0.0)."
+task :say_hello do
+  sh "echo Hey there, Kane."
+end
+
+desc "Make 10 files for me."
+task :make_files do
+  num = 1
+  limit = 10
+  limit.times do
+    sh "touch file-#{num}.txt"
+    sh "echo this is file number #{num} >> file-#{num}.txt"
+    num += 1
+  end
+end
+
+
+# Tasks for being Jack.
+
+namespace :jack do
+  desc "Jack saying hello"
+  task :say_hello do
+    puts "Evening, gentlemen. Such a lovely moon tonight. "
+  end
+
+  desc "Do what Jack was born to do"
+  task :howl_at_the_moon do
+    p "Be greasy and howl at the moon."
+  end
+
+  desc "Lose track of time and start thinking about the moon"
+  task :think_of_the_moon do
+    p "Oh no. I'm thinking about the moon again. Plus I'm so greasy!"
+  end
+
+  desc "Realise moon is more important than present company."
+  task :say_goodbye_and_run do
+    p "Goodbye. I need to go somewhere else now."
+    p "... it's totally not moon-relate, though."
+    p "*runs into the night*"
+  end
+
+  # Dependencies - chaining together multiple task
+
+  desc "Being with Jack when there's a full moon."
+  task :full_moon => [:think_of_the_moon, :say_goodbye_and_run, :howl_at_the_moon] do
+    puts "Badger: Sorry about his greasy, wolfy antics."
+  end
+
+end
