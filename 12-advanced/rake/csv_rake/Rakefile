@@ -1,0 +1,22 @@
+# The CSV class isn't part of the core Ruby library, so we need to require it:
+require 'csv'
+
+desc "Get animals from CSV and print info"
+task :get_animals do
+  # Use the File class's read method to read the contents of the csv file and store the contents of that csv in a variable called csv_text.
+  csv_text = File.read "animals.csv"
+  # Create a new instance of the CSV class, passing in the csv_text variable as the data, as well as the options necessary to tell Ruby that the first row in the csv is a header row, and to convert the headers to symbols.
+  csv = CSV.new csv_text, :headers => true, :header_converters => :symbol
+
+  # Call the to_a method on the csv instance object, and map each element in that array (which represents a row in our csv) to the block:
+  csv.to_a.map do |row|
+    # Convert the array to a hash:
+    r = row.to_hash
+    # Use the data.
+    p "#{r[:name]} is a #{r[:age]} year old #{r[:breed]}."
+  end
+
+end
+
+# We can now see this task by running `rake -T` from the terminal.
+# And we can run the task with `rake get_animals`
