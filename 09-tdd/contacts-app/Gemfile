@@ -41,6 +41,7 @@ group :development, :test do
   # Bundle
   # rails generate rspec:install
 
+  gem 'annotate'
   gem 'pry-rails'
   gem 'rspec-rails'
   gem 'factory_girl_rails'
