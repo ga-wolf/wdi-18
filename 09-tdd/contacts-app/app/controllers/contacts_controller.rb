@@ -26,7 +26,25 @@ class ContactsController < ApplicationController
     @contact = Contact.new contact_params
     if @contact.save
       redirect_to contact_path(@contact)
+    else
+      render :new
     end
+  end
+
+  def update
+    @contact = Contact.find_by id: params[:id]
+    if @contact.update contact_params
+      redirect_to contact_path( @contact )
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    contact = Contact.find_by id: params[:id]
+    contact.destroy
+
+    redirect_to contacts_path # Go to the index page
   end
 
   private
