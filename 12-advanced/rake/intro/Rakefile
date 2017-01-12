@@ -1,13 +1,19 @@
-desc "Say hello to our new TA (Badger v2.0.0)."
+# A rake task its simplest form:
+
 task :say_hello do
   sh "echo Hey there, Kane."
 end
 
+# Note, the task above will not appear when running the command `rake -T` in the terminal, because it has no description. To see all tasks (including those with no description), include the -a flag: `rake -T -a`
+
+# Add a description to the task:
 desc "Make 10 files for me."
+# Now let's just to a bunch of stuff with regular Ruby syntax/methods:
 task :make_files do
   num = 1
   limit = 10
   limit.times do
+    # The 'sh' method will run whatever shell command that is provided as an argument:
     sh "touch file-#{num}.txt"
     sh "echo this is file number #{num} >> file-#{num}.txt"
     num += 1
@@ -15,7 +21,7 @@ task :make_files do
 end
 
 
-# Tasks for being Jack.
+# Namespace your tasks for organisation and to avoid conflicts (eg, between the generic :say_hello above and the Jack-specific :say_hello below):
 
 namespace :jack do
   desc "Jack saying hello"
@@ -40,7 +46,7 @@ namespace :jack do
     p "*runs into the night*"
   end
 
-  # Dependencies - chaining together multiple task
+  # Dependencies - chaining together multiple task. Assign an array of tasks you want to run before running the current task:
 
   desc "Being with Jack when there's a full moon."
   task :full_moon => [:think_of_the_moon, :say_goodbye_and_run, :howl_at_the_moon] do

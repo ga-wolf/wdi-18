@@ -1,0 +1,87 @@
+body {
+  width: 600px;
+  height: 600px;
+  font-family: monospace;
+  margin: 0 auto;
+  text-align: center;
+  background-color: darkgrey;
+  color: white;
+}
+
+h1 {
+  font-size: 60px;
+  margin-top: 0px;
+  font-weight: 100;
+}
+
+.container {
+  max-width: 450px;
+  margin: 0 auto;
+  height: 100vh;
+  background-color: rgb(68,68,68);
+  padding: 20px;
+}
+
+.quote {
+  font-size: 30px;
+  font-style: oblique;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+img {
+  opacity: 0.2;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 850px;
+  width: 850px;
+  -webkit-animation:spin 60s linear infinite;
+  animation:spin 60s linear infinite;
+}
+
+@-webkit-keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes spin {
+  from {
+    transform-origin: 0% 0%;
+    transform: rotate(0deg) translate(-50%, -50%);
+  }
+  to {
+    transform-origin: 0% 0%;
+    transform: rotate(360deg) translate(-50%, -50%);
+  }
+}
+
+button {
+  border: none;
+  border-radius: 5px;
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  font-size: 18px;
+  padding: 10px;
+  font-family: monospace;
+}
+
+p {
+  quotes: "“" "”";
+  font-weight: 600;
+}
+
+p:before {
+  content: open-quote;
+}
+
+p:after {
+  content: close-quote;
+}
