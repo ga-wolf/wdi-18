@@ -5,6 +5,11 @@ RSpec.describe Contact, type: :model do
     expect( build(:contact) ).to be_valid
   end
 
+  it "has three phone numbers" do
+    contact = create :contact
+    expect(contact.phones.length).to eq(3)
+  end
+
   it "is valid with a first name, last name and email" do
     # Set up the data
     contact = build(:contact)
@@ -83,3 +88,10 @@ RSpec.describe Contact, type: :model do
     end
   end
 end
+
+# Test for:
+  # The factory
+  # Associations
+  # Validations
+  # Instance Methods
+  # Class methods
