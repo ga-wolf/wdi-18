@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>TweenMax</title>
+  <link rel="stylesheet" href="css/style.css">
+
+  <script src="js/jquery.js"></script>
+  <script src="js/tweenmax.js"></script>
+  <script src="js/main.js"></script>
+</head>
+<body>
+
+  <img src="http://fillmurray.com/g/400/400" class="bill">
+
+  <div class="stagger">
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <!-- <div class="box"></div> -->
+  </div>
+
+  <div class="controls">
+    <button class="reverse">Reverse</button>
+    <button class="pause">Pause</button>
+    <button class="play">Play</button>
+    <button class="doubleSpeed">Double the speed</button>
+    <button class="halfSpeed">Slow motion</button>
+    <input type="range" class="speed" min="0.1" max="42.0" value="1.0" step="0.1">
+    <input type="range" class="seek" min="0.1" max="10" step="0.1">
+    <input type="range" class="progress" min="0" max="1" step="0.1">
+  </div>
+
+</body>
+</html>

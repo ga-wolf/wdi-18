@@ -1,0 +1,40 @@
+@keyframes draw_lines {
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+body {
+  background-color: ghostwhite;
+}
+
+svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#waves {
+  stroke: #DCDCDC;
+  stroke-width: 5;
+  stroke-dasharray: 1110;
+  stroke-dashoffset: 1110;
+  transition: all 2s ease-in-out;
+  /*animation: draw_lines 2s ease-in-out infinite*/
+}
+
+svg:hover #waves {
+  stroke: #663399;
+  stroke-dashoffset: 0;
+}
+
+#bolt {
+  stroke-dasharray: 2450;
+  stroke-dashoffset: 2450;
+
+  animation-name: draw_lines;
+  animation-duration: 2.5s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
