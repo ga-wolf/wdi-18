@@ -1,0 +1,6 @@
+- ` npm init `
+- ` npm install --save-dev webpack webpack-dev-server `
+- ` npm install --save-dev babel babel-core babel-loader babel-preset-react babel-preset-es2015 `
+- ` npm install --save-dev html-webpack-plugin `
+- ` npm install --save react react-dom `
+- ` touch .gitignore .babelrc webpack.config.js `
