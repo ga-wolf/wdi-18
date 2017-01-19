@@ -2,7 +2,11 @@ import React from 'react';
 
 class Main extends React.Component {
   render() {
-    return ( <div>Main Component</div> );
+    return (
+      <div className="container" style={{ textAlign: "center" }}>
+        { this.props.children }
+      </div>
+    );
   }
 }
 

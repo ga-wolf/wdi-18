@@ -1,6 +1,28 @@
-import React from 'react';
-// Object Destructuring
-import ReactRouter, { Router, Route, IndexRoute, hashHistory } from 'react-router';
-import Main from '../components/Main';
+import React from "react";
 
-console.log( Main );
+// Object Destructuring
+import ReactRouter, {
+  Router,
+  Route,
+  IndexRoute,
+  hashHistory
+} from "react-router";
+
+import Main from "../components/Main";
+import Home from "../components/Home";
+import Search from "../components/Search";
+
+// This variable is like our config/routes.rb file
+  // It is using hash-based navigation
+    // The <Route path="/" component={Main}> is specifying which application.html.erb (the component that I want to wrap around all other components is Main)
+const routes = (
+  <Router history={hashHistory}>
+    <Route path="/" component={Main}>
+      <IndexRoute component={Home} />
+      <Route path="home" component={Home} />
+      <Route path="search" component={Search} />
+    </Route>
+  </Router>
+);
+
+export default routes;
