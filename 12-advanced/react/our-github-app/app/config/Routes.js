@@ -11,6 +11,7 @@ import ReactRouter, {
 import Main from "../components/Main";
 import Home from "../components/Home";
 import Search from "../components/Search";
+import Details from "../components/Details";
 
 // This variable is like our config/routes.rb file
   // It is using hash-based navigation
@@ -21,6 +22,7 @@ const routes = (
       <IndexRoute component={Home} />
       <Route path="home" component={Home} />
       <Route path="search" component={Search} />
+      <Route path="details/:username" component={Details} />
     </Route>
   </Router>
 );
