@@ -1,10 +1,12 @@
-# WDi18 ([General Assembly, Sydney](https://generalassemb.ly/sydney))
+# WDi-18 ([General Assembly, Sydney](https://generalassemb.ly/sydney))
 ## Wolf's Repository
 
 This repository contains:
 - The code from all code-alongs; and
 - The slides from each day.
 
+
+Something else here.
 ___
 
 ### 1. Repository Setup
